@@ -1,0 +1,13 @@
+Login.vue  --
+	.then(function(response){
+				console.log(response)
+    		})
+
+A User: iconsidine@example.org
+
+// .then(response => {
+        //         this.$auth.setToken(response.body.access_token, response.body.expires_in + Date.now())
+        //         this.$router.push("/feed")
+              }) 
+
+
