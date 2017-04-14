@@ -11,6 +11,9 @@
             <router-link tag="li" to="/feed" v-if=" isAuth">
               <a href="">Feed</a>
             </router-link>
+            <router-link tag="li" to="/product/create" v-if="isAuth">
+              <a href="">Create</a>
+            </router-link>
             <router-link tag="li" to="/logout" v-if=" isAuth">
               <a href="">Log Out</a>
             </router-link>

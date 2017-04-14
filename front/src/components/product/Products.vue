@@ -6,7 +6,6 @@
 		:product="product">
 		</my-product>
 	</div>
-	
 </template>
 <script>
 	import Product from './Product.vue'

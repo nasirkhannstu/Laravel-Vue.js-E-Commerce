@@ -17,6 +17,10 @@
 							@click="$emit('delete-product')">
 							Delet
 						</a>
+						<router-link class="btn btn-success" 
+							:to="'/product/' + product.id + '/edit'" >
+							Edit
+						</router-link>
 					</p>
 				</div>
 			</div>
