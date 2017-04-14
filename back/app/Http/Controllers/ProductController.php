@@ -17,7 +17,12 @@ class ProductController extends Controller
     }
     public function show($id){
         $product = Product::find($id);
-        return response()->json($product);
+        if(count($product) > 0){
+           return response()->json($product); 
+       }else{
+            return response()->json(['error' => 'Resource not found'], 404); 
+       }
+        
     }
     public function update(Request $request, $id){
         $product = Product::find($id);

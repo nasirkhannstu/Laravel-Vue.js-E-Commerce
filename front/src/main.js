@@ -11,6 +11,16 @@ Vue.use(Auth)
 Vue.http.options.root = 'http://localhost:8000'
 Vue.http.headers.common['Authorization'] = 'Bearer ' + Vue.auth.getToken()
 
+// Handelling errors Globally
+Vue.http.interceptors.push((request, next) => {
+	next(response => {
+		if(response.status == 404)
+			swal(response.status.toString(), response.body.error, "error")
+		else if(response.status == 500)
+			swal(response.status.toString(), 'There is a problem in our server', "error")
+	})
+})
+
 Router.beforeEach(
 	(to, from, next) => {
 		if(to.matched.some(record => record.meta.forVisitors)) {
